@@ -17,14 +17,20 @@
       <!-- Add idx to forEach so it builds each Modal with it's own index to prevent clashing -->
         <% data.forEach((candies, idx) => { %>
             <p class="note">
-            <img src="/images/remind.png">    
             <% if (candies.inStock) { %>
                 <% console.log(candies.inStock); %>
+
                 <span class="takenote">It's in Stock!</span>
                 <% } %>
                 
                 <%= candies.name %>
                 <%= candies.price %>
+                
+                <br><br>
+                <img src="/images/<%= candies.image %>" alt="<%= candies.name %>" class="img-fluid candy-img">
+                <img src="/images/Berry_Blast.jpeg" alt="" class="img-fluid candy-img">
+                <% console.log(candies.name); %>
+                <% console.log(candies.image); %>
 
                  <!-- 
                   Modal Button -

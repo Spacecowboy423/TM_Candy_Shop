@@ -15,7 +15,8 @@ export const setupDatabase = () => {
                 price REAL,
                 description TEXT,
                 flavor TEXT,
-                inStock BOOLEAN
+                inStock BOOLEAN,
+				image TEXT
             )
         `)
         .then(() => db)
@@ -36,14 +37,14 @@ export const setupTable = () => {
         driver: sqlite3.Database
     }).then(db => {
         return db.run(`
-            INSERT INTO candies (name, price, description, flavor, inStock)
+            INSERT INTO candies (name, price, description, flavor, inStock, image)
             VALUES
-                ('Cotton Candy Dream', 3.99, 'Fluffy clouds of pink and blue sweetness that melt in your mouth', 'Strawberry & Blue Raspberry', 1),
-                ('Bubble Gum Blast', 2.49, 'Classic chewy bubble gum balls in assorted fruity flavors', 'Mixed Berry', 1),
-                ('Rainbow Lollipop', 1.99, 'Swirled rainbow colors on a stick, perfect for any sweet tooth', 'Cherry & Lime', 1),
-                ('Sour Gummy Bears', 4.49, 'Tangy gummy bears coated in sour sugar crystals', 'Citrus Mix', 1),
-                ('Chocolate Fudge Bites', 5.99, 'Rich, creamy chocolate fudge pieces that melt in your mouth', 'Dark Chocolate', 1),
-                ('Strawberry Taffy', 3.49, 'Soft and chewy taffy bursting with strawberry flavor', 'Strawberry', 1)
+                ('Cotton Candy Dream', 3.99, 'Fluffy clouds of pink and blue sweetness that melt in your mouth', 'Strawberry & Blue Raspberry', 1, 'CC_Dream.jpg'),
+                ('Bubble Gum Blast', 2.49, 'Classic chewy bubble gum balls in assorted fruity flavors', 'Mixed Berry', 1, 'Berry_Blast.jpeg'),
+                ('Rainbow Lollipop', 1.99, 'Swirled rainbow colors on a stick, perfect for any sweet tooth', 'Cherry & Lime', 1, 'Rainbow_Lolli.jpg'),
+                ('Sour Gummy Bears', 4.49, 'Tangy gummy bears coated in sour sugar crystals', 'Citrus Mix', 1, 'Sour_Bears.jpg'),
+                ('Chocolate Fudge Bites', 5.99, 'Rich, creamy chocolate fudge pieces that melt in your mouth', 'Dark Chocolate', 1, 'Fudge_Bites.jpg'),
+                ('Strawberry Taffy', 3.49, 'Soft and chewy taffy bursting with strawberry flavor', 'Strawberry', 1, 'Strawberry_Taffy.jpg'),
         `)
         .then(() => {
             console.log('Data inserted into Table successfully.');

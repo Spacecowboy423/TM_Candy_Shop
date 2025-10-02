@@ -68,7 +68,15 @@ app.get('/contact', (req, res) => {
     res.render('pages/contact', { title: "Contact Sweet Treats" });
 });
 
-// Listen for requests
-app.listen(port, () => {
-    console.log(`App listening at port ${port}`);
-});
+//listen for requests
+// Ensure database is set up before starting the server
+setupDatabase()
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Server is running at http://localhost:${port}`);
+        });
+    })
+    .catch((err) => {
+        console.error('Failed to set up database:', err);
+        process.exit(1);
+    });

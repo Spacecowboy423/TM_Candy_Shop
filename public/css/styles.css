@@ -12,6 +12,15 @@
     height: 50px;
 }
 
+/* Candy thumbnail */
+.candy-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
 /* Placement of Modal inside the note */
 .note .btn-primary {
     position: absolute;
