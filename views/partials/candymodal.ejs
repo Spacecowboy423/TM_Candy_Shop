@@ -1,0 +1,36 @@
+<!-- 
+    I wish I was this good but I basically took this Modal button and the effects from 
+    https://getbootstrap.com/docs/4.0/components/modal/ 
+    I did read through to try and get an understanding of how it works and applied a few notes. 
+-->
+
+<!-- Modal Container, used to cover the viewable window for Modal fading in and out, accesses the correct modal from the modal index passed from index.ejs -->
+<div class="modal fade" id="modal<%= idx %>" tabindex="-1" aria-labelledby="modalLabel<%= idx %>" aria-hidden="true">
+
+    <!-- Modal Wrapper, takes over the top half of viewable window to create a space align the actual Modal Window -->
+    <div class="modal-dialog">
+
+        <!-- Content of Modal -->
+        <div class="modal-content">
+
+            <!-- Contains a Title for the Modal with an 'X' to escape -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel<%= idx %>">Sweet Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Contains the information from dataset (location, parking) -->
+            <div class="modal-body">
+                <!-- Location and Parking are picked up the because the candies dataset is passed from index.ejs -->
+                <strong>Flavor: </strong><%= candies.flavor %><hr>
+                <strong>Description: </strong><%= candies.description %>
+            </div>
+
+            <!-- Contains a footer section in the modal for the 'Close' button -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>

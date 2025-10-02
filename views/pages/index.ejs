@@ -1,0 +1,47 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/styles.css"/>
+<link rel="icon" type="image/x-icon" href="/images/candy.ico">
+
+<div class="mt-4 p-4 bg-gradient-info text-white">
+     <h1><%= title %></h1>
+</div>
+
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/menu.ejs') %>
+
+<body>
+    <!-- <div class="wrapper"> -->
+    <div class="d-flex flex-wrap flex-column flex-sm-column flex-md-row flex-lg-row">
+
+      <!-- Add idx to forEach so it builds each Modal with it's own index to prevent clashing -->
+        <% data.forEach((candies, idx) => { %>
+            <p class="note">
+            <img src="/images/remind.png">    
+            <% if (candies.inStock) { %>
+                <% console.log(candies.inStock); %>
+                <span class="takenote">It's in Stock!</span>
+                <% } %>
+                
+                <%= candies.name %>
+                <%= candies.price %>
+
+                 <!-- 
+                  Modal Button -
+                    data-bs-toggle="modal" - Tells bootstrap to open a modal when the button is clicked
+                    data-bas-target="#modal<%= idx %>" - Index applied during build to identify the modal
+                    aria-labelledby and aria-hidden - Accessibility attributes for things like screen readers, 
+                      aria-hidden hides it from accessible feature when not in use
+                -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<%= idx %>">
+                    Sweet Details
+                </button>
+
+                <!-- Call partial and pass it the dataset & modal index -->
+                <%- include('../partials/candymodal.ejs', { candies, idx }) %>
+            </p>
+        <% }); %>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
