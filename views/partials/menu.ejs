@@ -10,14 +10,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <!--Highlight the active link based on the currentPath variable 
+                Added "<%= (typeof currentPath !== 'undefined' && currentPath === '/') ? 'active' : '' %>" This checks 
+                if currentPath is defined and matches the link's path to add the 'active' class accordingly.
+                -->
                 <li class="nav-item">
-                    <a class="nav-link active nav-link-candy" aria-current="page" href="/">Candies</a>
+                    <a class="nav-link nav-link-candy <%= (typeof currentPath !== 'undefined' && currentPath === '/') ? 'active' : '' %>" aria-current="page" href="/">Candies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-candy" href="/about">About</a>
+                    <a class="nav-link nav-link-candy <%= (typeof currentPath !== 'undefined' && currentPath === '/about') ? 'active' : '' %>" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-candy" href="/contact">Contact</a>
+                    <a class="nav-link nav-link-candy <%= (typeof currentPath !== 'undefined' && currentPath === '/contact') ? 'active' : '' %>" href="/contact">Contact</a>
                 </li>
             </ul>
         </div>
