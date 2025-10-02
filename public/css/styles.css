@@ -49,20 +49,65 @@ body {
 }
 
 .takenote {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
     font-weight: bolder;
     background-color: black;
     color: #bef3fc;
+    opacity: 0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
-/* Candy card styling and hover effect */
+.candy-card:hover .takenote {
+    opacity: 1;
+    background-color: #FF69B4; /* Bubble gum pink on hover */
+    color: white;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+
+/* Candy card styling */
 
 .candy-card {
-    perspective: 1000px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+    width: 400px;
+    height: 300px;
+    background-color: #bef3fc;
     margin: 10px;
+    border: 3px dashed #FF69B4;
     border-radius: 10px;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: 0.3s;
+}
+
+.candy-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.candy-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+}
+.candy-price {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Hover effect to enlarge the card */

@@ -16,36 +16,40 @@
 
       <!-- Add idx to forEach so it builds each Modal with it's own index to prevent clashing -->
         <% data.forEach((candies, idx) => { %>
-            <p class="note candy-card">
+            <div class="note candy-card">
             <% if (candies.inStock) { %>
                 <% console.log(candies.inStock); %>
-
                 <span class="takenote">It's in Stock!</span>
                 <% } %>
-                
-                <%= candies.name %>
-                $<%= candies.price %>
-                
-                <br><br>
-                <img src="/images/<%= candies.image %>" alt="<%= candies.name %>" class="img-fluid candy-img">
-                <img src="/images/Berry_Blast.jpeg" alt="" class="img-fluid candy-img">
-                <% console.log(candies.name); %>
-                <% console.log(candies.image); %>
 
-                 <!-- 
-                  Modal Button -
-                    data-bs-toggle="modal" - Tells bootstrap to open a modal when the button is clicked
-                    data-bas-target="#modal<%= idx %>" - Index applied during build to identify the modal
-                    aria-labelledby and aria-hidden - Accessibility attributes for things like screen readers, 
-                      aria-hidden hides it from accessible feature when not in use
-                -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<%= idx %>">
-                    Sweet Details
-                </button>
+                <div class="candy-content">
+                    
+                    <h3 class="candy-name"><%= candies.name %></h3>
 
-                <!-- Call partial and pass it the dataset & modal index -->
-                <%- include('../partials/candymodal.ejs', { candies, idx }) %>
-            </p>
+                    <span class="candy-price">$<%= candies.price %></span>
+                    
+                    <br><br>
+                    <img src="/images/<%= candies.image %>" alt="<%= candies.name %>" class="img-fluid candy-img">
+                    <% console.log(candies.name); %>
+                    <% console.log(candies.image); %>
+
+                    <br><br>
+
+                    <!-- 
+                    Modal Button -
+                        data-bs-toggle="modal" - Tells bootstrap to open a modal when the button is clicked
+                        data-bas-target="#modal<%= idx %>" - Index applied during build to identify the modal
+                        aria-labelledby and aria-hidden - Accessibility attributes for things like screen readers, 
+                        aria-hidden hides it from accessible feature when not in use
+                    -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<%= idx %>">
+                        Sweet Details
+                    </button>
+
+                    <!-- Call partial and pass it the dataset & modal index -->
+                    <%- include('../partials/candymodal.ejs', { candies, idx }) %>
+                </div>
+            </div>
         <% }); %>
     </div>
     <%- include('../partials/footer.ejs') %>
