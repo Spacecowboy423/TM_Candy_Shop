@@ -12,11 +12,11 @@
 
 <body>
     <!-- <div class="wrapper"> -->
-    <div class="d-flex flex-wrap flex-column flex-sm-column flex-md-row flex-lg-row">
+    <div class="d-flex flex-wrap flex-column flex-sm-column flex-md-row flex-lg-row wrapper">
 
       <!-- Add idx to forEach so it builds each Modal with it's own index to prevent clashing -->
         <% data.forEach((candies, idx) => { %>
-            <p class="note">
+            <p class="note candy-card">
             <% if (candies.inStock) { %>
                 <% console.log(candies.inStock); %>
 
@@ -24,7 +24,7 @@
                 <% } %>
                 
                 <%= candies.name %>
-                <%= candies.price %>
+                $<%= candies.price %>
                 
                 <br><br>
                 <img src="/images/<%= candies.image %>" alt="<%= candies.name %>" class="img-fluid candy-img">

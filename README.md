@@ -21,3 +21,9 @@ When new developers pull from repo, thanks to the package-lock.json file, they s
 and node will only install the packages from the package-lock.json file.
 
 To ensure the node_modules folder is not uploaded to github a file called '.gitignore' in the root directory of TM_CANDY_SHOP. Inside the .gitignore file, add the text 'node_modules/'. This will allow you to keep node_modules locally while not pushing the update to github.
+
+
+Colors:
+blue: #bef3fc
+creme: #FDF8E7
+light creme: #fffdf7
