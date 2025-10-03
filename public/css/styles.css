@@ -24,7 +24,7 @@ body {
     margin: 10px;
     padding: 5px;
     border: 3px dashed #FF69B4; /* Bubble gum border */
-    position: relative; /* Needed to pplace Modal button inside note */
+    position: relative; /* Needed to place Modal button inside note */
 }
 
 .note img {
@@ -123,12 +123,6 @@ body.modal-open .candy-card:hover {
     transform: none;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* reset to default */
     z-index: 0;
-}
-
-.modal-content {
-    border-radius: 10px;
-    padding: 20px;
-    border-color: #FF1493;
 }
 
 

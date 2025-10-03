@@ -46,10 +46,13 @@
                         Sweet Details
                     </button>
 
-                    <!-- Call partial and pass it the dataset & modal index -->
-                    <%- include('../partials/candymodal.ejs', { candies, idx }) %>
+                    <!-- Modal partial removed from inside the card to avoid nesting the modal within transformed/stacking-card contexts -->
                 </div>
             </div>
+        <% }); %>
+        <!-- Render all modal elements after the cards so they are direct children of the page (not nested inside cards) -->
+        <% data.forEach((candies, idx) => { %>
+            <%- include('../partials/candymodal.ejs', { candies, idx }) %>
         <% }); %>
     </div>
     <%- include('../partials/footer.ejs') %>
