@@ -26,6 +26,9 @@
                     
                     <h3 class="candy-name"><%= candies.name %></h3>
 
+                <!-- Call partial and pass it the dataset & modal index -->
+                <%- include('../partials/candymodal.ejs', { candies, idx }) %>
+            </p>
                     <span class="candy-price">$<%= candies.price %></span>
                     
                     <br><br>
