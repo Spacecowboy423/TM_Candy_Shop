@@ -121,6 +121,60 @@ body {
 }
 
 
+/* Candy card styling */
+
+.candy-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+    width: 400px;
+    height: 300px;
+    background-color: #bef3fc;
+    margin: 10px;
+    border: 3px dashed #FF69B4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.candy-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.candy-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+}
+.candy-price {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Hover effect to enlarge the card */
+.candy-card:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 5; /* Ensure the hovered card is on top of others */
+}
+
+/* Disable hover effect when modal is open */
+body.modal-open .candy-card:hover {
+    /* Disable the hover effect when modal is open */
+    transform: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* reset to default */
+    z-index: 0;
+}
+
 
 /* Styling for 'Candy Store' background color */
 .bg-gradient-info {

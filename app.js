@@ -14,6 +14,14 @@ app.use(express.static(__dirname + "/public")); // make the public folder the de
 // Express loads the modue internally and stores it in app reference
 app.set('view engine', 'ejs');  //
 
+// expose current request path to all views so the nav can mark the active link
+// used in menu.ejs to highlight active link
+app.use((req, res, next) => {
+    res.locals.currentPath = req.path;
+    next();
+});
+
+
 // Set the landing page route
 // Send the index.ejs file in the pages folder, to client
 // File will have an extension of .ejs, Embedded JavaScript
@@ -60,7 +68,15 @@ app.get('/contact', (req, res) => {
     res.render('pages/contact', { title: "Contact Sweet Treats" });
 });
 
-// Listen for requests
-app.listen(port, () => {
-    console.log(`App listening at port ${port}`);
-});
+//listen for requests
+// Ensure database is set up before starting the server
+setupDatabase()
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Server is running at http://localhost:${port}`);
+        });
+    })
+    .catch((err) => {
+        console.error('Failed to set up database:', err);
+        process.exit(1);
+    });

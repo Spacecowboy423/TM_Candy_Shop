@@ -39,7 +39,6 @@ const insertCandiesSequentially = (db, candies, index = 0) => {
     ).then(() => insertCandiesSequentially(db, candies, index + 1));
 }
 
-// Insert data into the table after it's creation
 export const setupTable = () => {
     return open({
         filename: './public/database/candies.db',
