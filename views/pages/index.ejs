@@ -17,25 +17,19 @@
       <!-- Add idx to forEach so it builds each Modal with it's own index to prevent clashing -->
         <% data.forEach((candies, idx) => { %>
             <div class="note candy-card">
-            <% if (candies.inStock) { %>
-                <% console.log(candies.inStock); %>
-                <span class="takenote">It's in Stock!</span>
+                <% if (candies.inStock) { %>
+                    <% console.log(candies.inStock); %>
+                    <span class="takenote">It's in Stock!</span>
                 <% } %>
 
                 <div class="candy-content">
-                    
                     <h3 class="candy-name"><%= candies.name %></h3>
-
-                <!-- Call partial and pass it the dataset & modal index -->
-                <%- include('../partials/candymodal.ejs', { candies, idx }) %>
-            </p>
                     <span class="candy-price">$<%= candies.price %></span>
-                    
+                        
                     <br><br>
                     <img src="/images/<%= candies.image %>" alt="<%= candies.name %>" class="img-fluid candy-img">
                     <% console.log(candies.name); %>
                     <% console.log(candies.image); %>
-
                     <br><br>
 
                     <!-- 
@@ -48,16 +42,16 @@
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<%= idx %>">
                         Sweet Details
                     </button>
-
-                    <!-- Modal partial removed from inside the card to avoid nesting the modal within transformed/stacking-card contexts -->
                 </div>
             </div>
         <% }); %>
-        <!-- Render all modal elements after the cards so they are direct children of the page (not nested inside cards) -->
-        <% data.forEach((candies, idx) => { %>
-            <%- include('../partials/candymodal.ejs', { candies, idx }) %>
-        <% }); %>
     </div>
+
+    <!-- Render all modals after the cards so they're not placed inside transformed card elements -->
+    <% data.forEach((candies, idx) => { %>
+    <%- include('../partials/candymodal.ejs', { candies, idx }) %>
+    <% }); %>
+
     <%- include('../partials/footer.ejs') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

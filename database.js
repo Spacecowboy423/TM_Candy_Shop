@@ -25,7 +25,7 @@ export const setupDatabase = () => {
 };
 
 //helper function to loop incert candies recursively with promises
-function insertCandiesSequentially(db, candies, index = 0) {
+const insertCandiesSequentially = (db, candies, index = 0) => {
     if (index >= candies.length) {
         return Promise.resolve();
     }
