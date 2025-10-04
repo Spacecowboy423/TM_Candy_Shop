@@ -42,13 +42,16 @@
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<%= idx %>">
                         Sweet Details
                     </button>
-
-                    <!-- Call partial and pass it the dataset & modal index -->
-                    <%- include('../partials/candymodal.ejs', { candies, idx }) %>
                 </div>
             </div>
         <% }); %>
     </div>
+
+    <!-- Render all modals after the cards so they're not placed inside transformed card elements -->
+    <% data.forEach((candies, idx) => { %>
+    <%- include('../partials/candymodal.ejs', { candies, idx }) %>
+    <% }); %>
+
     <%- include('../partials/footer.ejs') %>
 </body>
 </html>
