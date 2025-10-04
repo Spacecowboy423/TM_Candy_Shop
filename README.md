@@ -44,14 +44,14 @@ This section will explain the projects design strategy in terms of (1) separatio
         data.js - contains the array of data used in web suite, accessed when database is empty at start or no database file exists
 +     /database/
         candies.db - contains the database accessed by sqlite3 which is used to populate index.ejs with data
--     /images/
++     /images/
         favicon & images - contains the physical images access across the web suite, favicon for browser and the remaining are for the products
 
 + views/ - templates used for web suite. Pages contains the web pages and Partials contains the reusable components used across the web suite.
 +     /pages/
-        about.ejs - 
-        contact.ejs - 
-        index.ejs -
+        about.ejs - contains the content/structure for the `About Us` page
+        contact.ejs - contains the content/structure for the `Contact Us` page
+        index.ejs - contains the content/structure for the main page
 +     /partials/
         candymodal.ejs - modal fragment presenting more information on any selected product from user.
         footer.ejs - contains the content for the footer
