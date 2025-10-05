@@ -25,10 +25,10 @@ The following installs are necessary to run the application.
 - npm install sqlite sqlite3 body-parser
 - The `package-lock.json` file and the `package.json` file will update accordingly during install.
 
-3. When new developers are onboarded to team, ensure the node.js is installed on system. Then when developer pulls from repo, the `package-lock.json` file and `node` will set everything up for them. They simply need to run the following:
+3. When new developers are onboarded to team, developer can skip steps 1 and 2 as long as `package-lock.json` and `package.json` are already configured. They simply need to run the following command and all dependencies from `package-lock.json` will be installed:
 - npm ci
 
-- <b>Note:</b> To ensure the node_modules folder is not uploaded to github a file called `.gitignore` in the root directory of TM_CANDY_SHOP. Inside the .gitignore file, add the text `node_modules/`. This will allow you to keep node_modules locally while not pushing the update to github.
+4. <b>Note:</b> To ensure the node_modules folder is not uploaded to github a file called `.gitignore` in the root directory of TM_CANDY_SHOP. Inside the .gitignore file, add the text `node_modules/`. This will allow you to keep node_modules locally while not pushing the update to github.
 
 
 ## Run the app
