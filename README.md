@@ -1,28 +1,33 @@
 # TM_Candy_Shop
 
 ## Install Instructions
-This project uses node, express, ejs6 standards, and sqllite to work.
-The follwing install are necessary to perform.
+This project uses `node`, `express`, `ejs6`standards, and `sqlite3` with `body-parser` to work. It imports `bootstrap` for the UI using a specific URL for isolated components. for the layout and modal used.
+- `node` allows the execution of code on local server
+- `express` works with node to act as middle, handles the routing with api calls
+- `ejs6` industry standards using node and express, uses the templating to render pages with data from application
+- `sqlite3` local database handling the storage and access of data in application with asynchronous calls
+- `body-parser` used to parse data from database
+- `bootstrap` is used for specific layout and theme colors for the template used across suite. Used for the modal with more information on products.
 
+- The follwing installs are necessary to perform to run the application.
+1. Make sure node.js is installed. The following link will walk through instructions: https://www.javascripttutorial.net/nodejs-tutorial/install-nodejs/
+
+- In the root folder, run the following to create the `package.json` file
 1. npm init -y
-This will create the package.json file
-2. In the package.json file change the value in "type:" to "module".
+2. In the `package.json` file change the value in `type:` to `module`.
 
-3. npm install node
-4. npm install express
-5. npm install ejs
-6. npm install sqlite sqlite3 body-parser
+- In terminal, run the following commands:
+1. npm install express
+2. npm install ejs
+3. npm install sqlite sqlite3 body-parser
 
-The package-lock.json file and the package.json file update accordingly during install.
+- The `package-lock.json` file and the `package.json` file will update accordingly during install.
 
-When new developers pull from repo, thanks to the package-lock.json file, they simply need to run:
-
+- When new developers are onboarded to team, ensure the node.js is installed on system. Then when developer pulls from repo, the `package-lock.json` file and `node` will set everything up for them. They simply need to run the following:
 1. npm ci
 
-and `node` will only install the packages from the package-lock.json file.
+- <b>Note:</b> To ensure the node_modules folder is not uploaded to github a file called `.gitignore` in the root directory of TM_CANDY_SHOP. Inside the .gitignore file, add the text `node_modules/`. This will allow you to keep node_modules locally while not pushing the update to github.
 
-## Note
-To ensure the node_modules folder is not uploaded to github a file called `.gitignore` in the root directory of TM_CANDY_SHOP. Inside the .gitignore file, add the text `node_modules/`. This will allow you to keep node_modules locally while not pushing the update to github.
 
 ## Run the app
 Access the terminal and navigate to the projects root folder and then in the terminal run:
@@ -69,6 +74,11 @@ How menu is linked to the routes:
 - The navigation markup lives in `menu.ejs`. The menu contains anchor links that match the route paths to the designated page.
 - Each page template includes the `menu.ejs` partial to ensure every page renders the same navigation markup, keeping the links consistent across routes and pages.
 - When a user clicks a menu item, the browser requests the route from `Express` and `app.js` handles it. The page is then rendered by the corresponding view. The `title` passed to the view can be used to show the active page in the menu.
+
+
+3. UI (Bootstrap)
+- Bootstrap is used to create a more responsive layout and the modal components used for each product description. There is a large variety of pre-build components and styling that make it building the UI more robust and speed up development. It allows the use of pre-built components with custom code to every unique project. Bootstrap has a vast amount of documentation to assist in incorporating components to any project. 
+
 
 
 ## Data Transmission Between UI and Backend
