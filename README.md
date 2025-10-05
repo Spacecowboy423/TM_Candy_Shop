@@ -1,28 +1,37 @@
 # TM_Candy_Shop
 
+## Components Used in Application
+This project uses `node`, `express`, `ejs6`standards, and `sqlite3` with `body-parser` to work. It imports `bootstrap` for the UI using a specific URL for isolated components. for the layout and modal used.
+- `node` allows the execution of code on local server
+- `express` works with node to act as middle, handles the routing with api calls
+- `ejs6` industry standards using node and express, uses the templating to render pages with data from application
+- `sqlite3` local database handling the storage and access of data in application with asynchronous calls
+- `body-parser` used to parse data from database
+- `bootstrap` is used for specific layout and theme colors for the template used across suite. Used for the modal with more information on products.
+
+## Prerequisites
+1. Node.js must be installed before proceeding. The following link will walk through instructions: https://www.javascripttutorial.net/nodejs-tutorial/install-nodejs/
+
+
 ## Install Instructions
-This project uses node, express, ejs6 standards, and sqllite to work.
-The follwing install are necessary to perform.
+The following installs are necessary to run the application.
+1. In the root folder, run the following to create the `package.json` file
+     - npm init -y
+     - In the `package.json` file change the value in `type:` to `module`.
 
-1. npm init -y
-This will create the package.json file
-2. In the package.json file change the value in "type:" to "module".
+2. In terminal, run the following commands:
+     - npm install express
+     - npm install ejs
+     - npm install sqlite sqlite3 body-parser
+     - The `package-lock.json` file and the `package.json` file will update accordingly during install.
 
-3. npm install node
-4. npm install express
-5. npm install ejs
-6. npm install sqlite sqlite3 body-parser
+3. When new developers are onboarded to team, developer can skip steps 1 and 2 as long as `package-lock.json` and `package.json` are already configured. They simply need to run the following command and all dependencies from `package-lock.json` will be installed:
+     - npm ci
 
-The package-lock.json file and the package.json file update accordingly during install.
+4. <b>Note:</b> To ensure the `node_modules` folder is not uploaded to github a file called `.gitignore` is created in the root directory of TM_CANDY_SHOP.
+     - Inside `.gitignore`, the text "node_modules/" was added.
+     - This will ensure `node_modules` is only stored locally and not pushed/pulled to/from GitHub.
 
-When new developers pull from repo, thanks to the package-lock.json file, they simply need to run:
-
-1. npm ci
-
-and `node` will only install the packages from the package-lock.json file.
-
-## Note
-To ensure the node_modules folder is not uploaded to github a file called `.gitignore` in the root directory of TM_CANDY_SHOP. Inside the .gitignore file, add the text `node_modules/`. This will allow you to keep node_modules locally while not pushing the update to github.
 
 ## Run the app
 Access the terminal and navigate to the projects root folder and then in the terminal run:
@@ -38,25 +47,25 @@ This section will explain the projects design strategy in terms of (1) separatio
 - database.js - database creation, seeding, and helper function to initialize database.
 
 - public/ - contains the static assets, standards templates follow this structure to access assets
--     /css/
-        style.css - contains the reusable styling across web suite
--     /data/
-        data.js - contains the array of data used in web suite, accessed when database is empty at start or no database file exists
--     /database/
-        candies.db - contains the database accessed by sqlite3 which is used to populate index.ejs with data
--     /images/
-        favicon & images - contains the physical images access across the web suite, favicon for browser and the remaining are for the products
+     -     /css/
+             style.css - contains the reusable styling across web suite
+     -     /data/
+             data.js - contains the array of data used in web suite, accessed when database is empty at start or no database file exists
+     -     /database/
+             candies.db - contains the database accessed by sqlite3 which is used to populate index.ejs with data
+     -     /images/
+             favicon & images - contains the physical images access across the web suite, favicon for browser and the remaining are for the products
 
 - views/ - templates used for web suite. Pages contains the web pages and Partials contains the reusable components used across the web suite.
--     /pages/
-        about.ejs - contains the content/structure for the `About Us` page
-        contact.ejs - contains the content/structure for the `Contact Us` page
-        index.ejs - contains the content/structure for the main page
--     /partials/
-        candymodal.ejs - modal fragment presenting more information on any selected product from user.
-        footer.ejs - contains the content for the footer
-        head.ejs - contains the content for the header
-        menu.ejs - contains the content for the menu
+     -     /pages/
+             about.ejs - contains the content/structure for the `About Us` page
+             contact.ejs - contains the content/structure for the `Contact Us` page
+             index.ejs - contains the content/structure for the main page
+     -     /partials/
+             candymodal.ejs - modal fragment presenting more information on any selected product from user.
+             footer.ejs - contains the content for the footer
+             head.ejs - contains the content for the header
+             menu.ejs - contains the content for the menu
 
 
 
@@ -69,6 +78,11 @@ How menu is linked to the routes:
 - The navigation markup lives in `menu.ejs`. The menu contains anchor links that match the route paths to the designated page.
 - Each page template includes the `menu.ejs` partial to ensure every page renders the same navigation markup, keeping the links consistent across routes and pages.
 - When a user clicks a menu item, the browser requests the route from `Express` and `app.js` handles it. The page is then rendered by the corresponding view. The `title` passed to the view can be used to show the active page in the menu.
+
+
+3. UI (Bootstrap)
+- Bootstrap is used to create a more responsive layout and the modal components used for each product description. There is a large variety of pre-build components and styling that make it building the UI more robust and speed up development. It allows the use of pre-built components with custom code to every unique project. Bootstrap has a vast amount of documentation to assist in incorporating components to any project. 
+
 
 
 ## Data Transmission Between UI and Backend
