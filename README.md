@@ -16,13 +16,13 @@ This project uses `node`, `express`, `ejs6`standards, and `sqlite3` with `body-p
 ## Install Instructions
 The following installs are necessary to run the application.
 1. In the root folder, run the following to create the `package.json` file
-- npm init -y
-- In the `package.json` file change the value in `type:` to `module`.
+        - npm init -y
+        - In the `package.json` file change the value in `type:` to `module`.
 
-- In terminal, run the following commands:
-1. npm install express
-2. npm install ejs
-3. npm install sqlite sqlite3 body-parser
+2. In terminal, run the following commands:
+        - npm install express
+        - npm install ejs
+        - npm install sqlite sqlite3 body-parser
 
 - The `package-lock.json` file and the `package.json` file will update accordingly during install.
 
