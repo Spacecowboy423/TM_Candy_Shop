@@ -1,29 +1,30 @@
 # TM_Candy_Shop
 
 ## Install Instructions
-- This project uses `node`, `express`, `ejs6`standards, and `sqlite3` with `body-parser` to work. It imports `bootstrap` for the UI using a specific URL for isolated components. for the layout and modal used.
-        `node` allows the execution of code on local server
-        `express` works with node to act as middle, handles the routing with api calls
-        `ejs6` industry standards using node and express, uses the templating to render pages with data from application
-        `sqlite3` local database handling the storage and access of data in application with asynchronous calls
-        `body-parser` used to parse data from database
-        `bootstrap` is used for specific layout and theme colors for the template used across suite. Used for the modal with more information on products.
++ This project uses `node`, `express`, `ejs6`standards, and `sqlite3` with `body-parser` to work. It imports `bootstrap` for the UI using a specific URL for isolated components. for the layout and modal used.
+- `node` allows the execution of code on local server
+- `express` works with node to act as middle, handles the routing with api calls
+- `ejs6` industry standards using node and express, uses the templating to render pages with data from application
+- `sqlite3` local database handling the storage and access of data in application with asynchronous calls
+- `body-parser` used to parse data from database
+- `bootstrap` is used for specific layout and theme colors for the template used across suite. Used for the modal with more information on products.
 
 - The follwing installs are necessary to perform to run the application.
-        1. Make sure node.js is installed. The following link will walk through instructions: https://www.javascripttutorial.net/nodejs-tutorial/install-nodejs/
+ 1. Make sure node.js is installed. The following link will walk through instructions: https://www.javascripttutorial.net/nodejs-tutorial/install-nodejs/
 
 - In the root folder, run the following to create the `package.json` file
-        1. npm init -y
-        2. In the `package.json` file change the value in `type:` to `module`.
+ 1. npm init -y
+ 2. In the `package.json` file change the value in `type:` to `module`.
 
 - In terminal, run the following commands:
-        1. npm install express
-        2. npm install ejs
-        3. npm install sqlite sqlite3 body-parser
-        4. The `package-lock.json` file and the `package.json` file will update accordingly during install.
+1. npm install express
+2. npm install ejs
+3. npm install sqlite sqlite3 body-parser
+
+- The `package-lock.json` file and the `package.json` file will update accordingly during install.
 
 - When new developers are onboarded to team, ensure the node.js is installed on system. Then when developer pulls from repo, the `package-lock.json` file and `node` will set everything up for them. They simply need to run the following:
-        1. npm ci
+1. npm ci
 
 - <b>Note:</b> To ensure the node_modules folder is not uploaded to github a file called `.gitignore` in the root directory of TM_CANDY_SHOP. Inside the .gitignore file, add the text `node_modules/`. This will allow you to keep node_modules locally while not pushing the update to github.
 
@@ -42,14 +43,14 @@ This section will explain the projects design strategy in terms of (1) separatio
 - database.js - database creation, seeding, and helper function to initialize database.
 
 - public/ - contains the static assets, standards templates follow this structure to access assets
-        /css/
-                style.css - contains the reusable styling across web suite
-        /data/
-                data.js - contains the array of data used in web suite, accessed when database is empty at start or no database file exists
-        /database/
-                candies.db - contains the database accessed by sqlite3 which is used to populate index.ejs with data
-        /images/
-                favicon & images - contains the physical images access across the web suite, favicon for browser and the remaining are for the products
+-     /css/
+        style.css - contains the reusable styling across web suite
+-     /data/
+        data.js - contains the array of data used in web suite, accessed when database is empty at start or no database file exists
+-     /database/
+        candies.db - contains the database accessed by sqlite3 which is used to populate index.ejs with data
+-     /images/
+        favicon & images - contains the physical images access across the web suite, favicon for browser and the remaining are for the products
 
 - views/ - templates used for web suite. Pages contains the web pages and Partials contains the reusable components used across the web suite.
 -     /pages/
