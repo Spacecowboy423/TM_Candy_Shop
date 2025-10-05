@@ -9,14 +9,15 @@ This project uses `node`, `express`, `ejs6`standards, and `sqlite3` with `body-p
 - `body-parser` used to parse data from database
 - `bootstrap` is used for specific layout and theme colors for the template used across suite. Used for the modal with more information on products.
 
+## Prerequisites
+1. Node.js must be installed before proceeding. The following link will walk through instructions: https://www.javascripttutorial.net/nodejs-tutorial/install-nodejs/
+
 
 ## Install Instructions
-- The follwing installs are necessary to perform to run the application.
-1. Make sure node.js is installed. The following link will walk through instructions: https://www.javascripttutorial.net/nodejs-tutorial/install-nodejs/
-
-- In the root folder, run the following to create the `package.json` file
-1. npm init -y
-2. In the `package.json` file change the value in `type:` to `module`.
+The following installs are necessary to run the application.
+1. In the root folder, run the following to create the `package.json` file
+- npm init -y
+- In the `package.json` file change the value in `type:` to `module`.
 
 - In terminal, run the following commands:
 1. npm install express
