@@ -1,7 +1,7 @@
 # TM_Candy_Shop
 
-## Install Instructions
-+ This project uses `node`, `express`, `ejs6`standards, and `sqlite3` with `body-parser` to work. It imports `bootstrap` for the UI using a specific URL for isolated components. for the layout and modal used.
+## Components Used in Application
+This project uses `node`, `express`, `ejs6`standards, and `sqlite3` with `body-parser` to work. It imports `bootstrap` for the UI using a specific URL for isolated components. for the layout and modal used.
 - `node` allows the execution of code on local server
 - `express` works with node to act as middle, handles the routing with api calls
 - `ejs6` industry standards using node and express, uses the templating to render pages with data from application
@@ -9,12 +9,14 @@
 - `body-parser` used to parse data from database
 - `bootstrap` is used for specific layout and theme colors for the template used across suite. Used for the modal with more information on products.
 
+
+## Install Instructions
 - The follwing installs are necessary to perform to run the application.
- 1. Make sure node.js is installed. The following link will walk through instructions: https://www.javascripttutorial.net/nodejs-tutorial/install-nodejs/
+1. Make sure node.js is installed. The following link will walk through instructions: https://www.javascripttutorial.net/nodejs-tutorial/install-nodejs/
 
 - In the root folder, run the following to create the `package.json` file
- 1. npm init -y
- 2. In the `package.json` file change the value in `type:` to `module`.
+1. npm init -y
+2. In the `package.json` file change the value in `type:` to `module`.
 
 - In terminal, run the following commands:
 1. npm install express
