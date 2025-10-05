@@ -16,19 +16,21 @@ This project uses `node`, `express`, `ejs6`standards, and `sqlite3` with `body-p
 ## Install Instructions
 The following installs are necessary to run the application.
 1. In the root folder, run the following to create the `package.json` file
-    - npm init -y
-    - In the `package.json` file change the value in `type:` to `module`.
+     - npm init -y
+     - In the `package.json` file change the value in `type:` to `module`.
 
 2. In terminal, run the following commands:
-- npm install express
-- npm install ejs
-- npm install sqlite sqlite3 body-parser
-- The `package-lock.json` file and the `package.json` file will update accordingly during install.
+     - npm install express
+     - npm install ejs
+     - npm install sqlite sqlite3 body-parser
+     - The `package-lock.json` file and the `package.json` file will update accordingly during install.
 
 3. When new developers are onboarded to team, developer can skip steps 1 and 2 as long as `package-lock.json` and `package.json` are already configured. They simply need to run the following command and all dependencies from `package-lock.json` will be installed:
-- npm ci
+     - npm ci
 
-4. <b>Note:</b> To ensure the node_modules folder is not uploaded to github a file called `.gitignore` in the root directory of TM_CANDY_SHOP. Inside the .gitignore file, add the text `node_modules/`. This will allow you to keep node_modules locally while not pushing/pulling the folder to/from GitHub.
+4. <b>Note:</b> To ensure the `node_modules` folder is not uploaded to github a file called `.gitignore` is created in the root directory of TM_CANDY_SHOP.
+     - Inside `.gitignore`, the text "node_modules/" was added.
+     - This will ensure `node_modules` is only stored locally and not pushed/pulled to/from GitHub.
 
 
 ## Run the app
